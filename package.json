@@ -9,12 +9,19 @@
     "json-server": "json-server -p 3001 data.json"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.72",
     "axios": "^0.24.0",
+    "gravatar": "^1.8.2",
+    "md5": "^2.3.0",
+    "moment": "^2.29.1",
     "next": "12.0.7",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@types/gravatar": "^1.8.3",
+    "@types/mailchimp__mailchimp_marketing": "^3.0.2",
+    "@types/md5": "^2.3.1",
     "@types/node": "^16.11.12",
     "@types/react": "^17.0.37",
     "eslint": "8.4.1",

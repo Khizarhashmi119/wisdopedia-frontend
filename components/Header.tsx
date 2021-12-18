@@ -18,8 +18,8 @@ const Header = (): JSX.Element => {
     case "/blogs":
       headerStyle = { backgroundImage: "url('/images/blogs.jpg')" };
       break;
-    case "/contact-us":
-      headerStyle = { backgroundImage: "url('/images/contact-us.jpg')" };
+    case "/contact":
+      headerStyle = { backgroundImage: "url('/images/contact.jpg')" };
       break;
     default:
       headerStyle = {};
@@ -66,7 +66,7 @@ const Header = (): JSX.Element => {
             </Link>
           </li>
           <li className={styles["nav-item"]}>
-            <Link href="/contact-us" passHref>
+            <Link href="/contact" passHref>
               <a className={styles["nav-link"]}>Contact Us</a>
             </Link>
           </li>
@@ -92,7 +92,7 @@ const Header = (): JSX.Element => {
           <h2 className={styles["header-title"]}>BLOGS</h2>
         </div>
       )}
-      {pathname === "/contact-us" && (
+      {pathname === "/contact" && (
         <div className={styles["header-title-section"]}>
           <h2 className={styles["header-title"]}>CONTACT US</h2>
         </div>

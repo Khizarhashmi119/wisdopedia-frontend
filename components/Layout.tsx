@@ -4,11 +4,11 @@ import Head from "next/head";
 import Header from "./Header";
 import Footer from "./Footer";
 
-interface Props {
+interface IProps {
   children: ReactNode;
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: IProps) => {
   return (
     <Fragment>
       <Head>

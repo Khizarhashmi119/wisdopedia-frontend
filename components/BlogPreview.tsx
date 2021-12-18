@@ -2,18 +2,21 @@ import { useRouter } from "next/router";
 
 import styles from "../styles/BlogPreview.module.css";
 
-import { Blog } from "../types/Blog";
+import { TBlog } from "../types/Blog";
 
-interface Props {
-  blog: Blog;
+interface IProps {
+  blog: TBlog;
 }
 
-const BlogPreview = ({ blog }: Props) => {
+const BlogPreview = ({ blog }: IProps) => {
   const { title, description, cover } = blog;
   const { push } = useRouter();
 
   return (
-    <div className={styles["blog-preview"]} onClick={() => push(`/blogs`)}>
+    <div
+      className={styles["blog-preview"]}
+      onClick={() => push(`/blogs/${blog.slug}`)}
+    >
       <div
         className={styles["bg-img"]}
         style={{ backgroundImage: `url('${cover}')` }}

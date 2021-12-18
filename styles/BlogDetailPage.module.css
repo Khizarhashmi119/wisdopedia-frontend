@@ -1,0 +1,44 @@
+.blog-detail-page {
+  border-bottom: 1px solid #c1c1c1;
+  padding: 3% 8%;
+}
+
+.blog-content {
+  margin: 0 auto 1rem;
+  max-width: 650px;
+}
+
+.blog-main-image {
+  border-radius: 0.25rem;
+  height: 300px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.blog-info-container {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.blog-author-name,
+.blog-category-name,
+.blog-date {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.blog-title {
+  margin: 1rem 0;
+}
+
+.blog-body {
+  margin: 1rem 0;
+}
+
+.blog-body * {
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: 1.2rem;
+  max-width: 100%;
+}

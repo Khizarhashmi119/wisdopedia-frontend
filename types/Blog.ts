@@ -1,4 +1,6 @@
-export type Blog = {
+import { TComment } from "./Comment";
+
+export type TBlog = {
   _id: string;
   title: string;
   author: string;
@@ -9,5 +11,7 @@ export type Blog = {
   }[];
   tags: string[];
   cover: string;
+  slug: string;
+  comments: TComment[];
   createdAt: string;
 };

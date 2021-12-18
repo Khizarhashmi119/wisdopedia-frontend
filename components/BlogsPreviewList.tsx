@@ -2,13 +2,13 @@ import BlogPreview from "./BlogPreview";
 
 import styles from "../styles/BlogsPreviewList.module.css";
 
-import { Blog } from "../types/Blog";
+import { TBlog } from "../types/Blog";
 
-interface Props {
-  blogs: Blog[];
+interface IProps {
+  blogs: TBlog[];
 }
 
-const BlogsPreviewList = ({ blogs }: Props) => {
+const BlogsPreviewList = ({ blogs }: IProps) => {
   return (
     <div className={styles["blogs-preview-list"]}>
       {blogs.map((blog) => (

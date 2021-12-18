@@ -7,11 +7,33 @@ import styles from "../styles/Footer.module.css";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [subscribeLoading, setSubscribeLoading] = useState(false);
   const currentYear = new Date().getFullYear();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    try {
+      setSubscribeLoading(true);
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+        }),
+      });
+
+      const data = await res.json();
+      if (res.status === 200) setMessage(data.msg);
+      else setMessage(data.errors[0].msg);
+    } catch (err) {
+      setMessage("Oops! Something went wrong.");
+    }
+
     setEmail("");
+    setSubscribeLoading(false);
   };
 
   return (
@@ -82,9 +104,10 @@ const Footer = () => {
                 required
               />
               <button className={styles["subscribe-button"]} type="submit">
-                Subscribe
+                {!subscribeLoading ? "Subscribe" : "Loading..."}
               </button>
             </form>
+            <div className="message">{message}</div>
           </div>
         </div>
       </div>
